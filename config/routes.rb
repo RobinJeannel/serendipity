@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #root to: 'home#index '
   # You can have the root of your site routed with "root"
   root to: "application#landing"
-
+  resources :articles
   resources :users, :only => [:index, :show]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -27,7 +27,14 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+  ######################################
+  #$ ('.editable').each(function(){
+   #   $('<div class="editable">' + $(this).html() + '</div>').replaceAll(this);
+    #  var editor = new MediumEditor('.editable');
+  #editor.activate();
+  #$(editor.elementSelection).focus();
+   # });
+############################
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

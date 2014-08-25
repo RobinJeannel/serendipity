@@ -6,16 +6,14 @@
 
 <p>Invite friends</p>
 
-<p><a href="" class="edit">Redact a post and save it (increase your chance to be pick)</a/</p>
-</div>
-<div class="editable"></div>
+<%= link_to 'create a post', new_article_path %>
+<%= link_to 'edit my post', new_article_path %>
 
-<script>
-$('.edit').on('click', function(e) {
-  e.preventDefault();
-  var editor = new MediumEditor('.editable');
-  editor.activate();
 
-  $(editor.elementSelection).focus();
-});
-</script>
+
+
+
+
+
+
+
