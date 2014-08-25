@@ -1,0 +1,8 @@
+div#sidebar{
+   position:fixed;
+   height:100%;
+   width:200px;
+   top:0;
+   left:0;
+   background:grey;
+}

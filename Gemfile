@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-
+gem 'bootstrap-sass'
 gem 'devise'
-gem 'flatui-rails'
+gem 'medium-editor-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record

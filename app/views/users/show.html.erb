@@ -1,2 +1,21 @@
+<div id="sidebar">
+
 <h1>Mon profil</h1>
 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+<p>Communities followed</p>
+
+<p>Invite friends</p>
+
+<p><a href="" class="edit">Redact a post and save it (increase your chance to be pick)</a/</p>
+</div>
+<div class="editable"></div>
+
+<script>
+$('.edit').on('click', function(e) {
+  e.preventDefault();
+  var editor = new MediumEditor('.editable');
+  editor.activate();
+
+  $(editor.elementSelection).focus();
+});
+</script>
