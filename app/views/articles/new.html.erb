@@ -1,8 +1,8 @@
 <%= form_for(@article) do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title,  :placeholder => @article.title %>
   <%= f.label :content %>
-  <%= f.text_area :content, class: 'editable'%>
+  <%= f.text_area :content,:placeholder => @article.content, class: 'editable' %>
   <%= f.submit %>
 <% end %>
 
