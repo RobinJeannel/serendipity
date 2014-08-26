@@ -1,3 +1,22 @@
+GIT
+  remote: https://github.com/sferik/rails_admin
+  revision: 5dbd480e9daa39df713ccd9e199d807c958ec188
+  specs:
+    rails_admin (0.6.3)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0)
+      haml (~> 4.0)
+      jquery-rails (~> 3.0)
+      jquery-ui-rails (~> 4.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,20 +122,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
-    rails_admin (0.6.3)
-      builder (~> 3.1)
-      coffee-rails (~> 4.0)
-      font-awesome-rails (>= 3.0)
-      haml (~> 4.0)
-      jquery-rails (~> 3.0)
-      jquery-ui-rails (~> 4.0)
-      kaminari (~> 0.14)
-      nested_form (~> 0.3)
-      rack-pjax (~> 0.7)
-      rails (~> 4.0)
-      remotipart (~> 1.0)
-      safe_yaml (~> 1.0)
-      sass-rails (~> 4.0)
     railties (4.1.4)
       actionpack (= 4.1.4)
       activesupport (= 4.1.4)
@@ -176,7 +181,7 @@ DEPENDENCIES
   medium-editor-rails
   pg
   rails (= 4.1.4)
-  rails_admin
+  rails_admin!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
