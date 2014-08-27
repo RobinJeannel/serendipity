@@ -6,5 +6,10 @@ class User < ActiveRecord::Base
 
 has_many :memberships
 has_many :communities, through: :memberships
+has_many :editable_communities, foreign_key: 'user_id', class_name: 'Community'
 has_many :articles
+
+def name
+  "#{email}"
+end
 end

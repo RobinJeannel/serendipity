@@ -16,3 +16,5 @@
 //= require_tree .
 //= require medium-editor
 
+//= require jquery
+//= require bootstrap-sprockets
