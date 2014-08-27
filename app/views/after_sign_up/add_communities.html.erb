@@ -1,0 +1,15 @@
+<h2>Thanks for signing up </h2>
+
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+<%= check_box_tag 'communities[]', 'entrepreneurs', nil, id: "entrepreneurs" %>
+<%= label_tag 'entrepreneurs' %>
+
+<%= check_box_tag 'communities[]', 'cookers', nil, id: "cookers" %>
+<%= label_tag 'cookers' %>
+
+<%= check_box_tag 'communities[]', 'mountaineers', nil, id: "mountaineers" %>
+<%= label_tag 'mountaineers' %>
+
+<%= f.submit "Subscibe to those communities" %>
+<% end %>
+

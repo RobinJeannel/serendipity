@@ -4,6 +4,10 @@
 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
 <p>Communities followed</p>
 
+<% current_user.communities.each do |community| %>
+<p> <%=community.name%> </p>
+<%end%>
+
 <p>Invite friends</p>
 
 <%= link_to 'My post', new_article_path %>
