@@ -17,7 +17,7 @@ ActiveAdmin.register Community do
 
   form html: {multipart: true} do |f|
     f.inputs do
-      f.input :user
+      f.input :user_id, as: :select, collection: User.all, :label_method => :name ,:value_method => :name, :label => "User" ,:include_blank => false
       f.input :name
 
     end

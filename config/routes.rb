@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :users, controllers: { registrations: 'users/registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
+ # devise_for :users, :controllers => {  }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,7 +17,6 @@ Rails.application.routes.draw do
   resources :communities, only: [] do
     resources :articles, only: [:new, :create, :update]
   end
-
 
   resources :after_sign_up
   # Example of regular route:

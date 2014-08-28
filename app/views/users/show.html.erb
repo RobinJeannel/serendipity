@@ -1,31 +1,29 @@
 <div id="sidebar">
 
 <h1>Mon profil</h1>
+<%= image_tag current_user.picture %>
 <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+<%= link_to 'Edit my profil', after_sign_up_path(:add_communities)  %>
 <p>Communities followed</p>
 
 <% current_user.communities.each do |community| %>
   <p> <%=community.name%> </p>
   <% if current_user.id == community.user_id %>
-    <%= link_to 'My post', new_community_article_path(community) %> <%#new_article_path new_community_article_path%>
+    <%= link_to 'Edit post', new_community_article_path(community) %>
+    <%= link_to 'Post my artcile'%>
   <% end %>
 <%end%>
 
 <p>Invite friends</p>
+</div>
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation" class="divider"></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-  </ul>
+<% Community.all.each do |community| %>
+  <% if community.winner && !community.winner.articles.empty? %>
+    <%= article = community.winner.articles.last %>
+    <%= article.title %>
+    <%= article.content %>
 
-
+  <% end %>
+<% end %>
 
 

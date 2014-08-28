@@ -22,7 +22,7 @@ def create
   article = current_user.articles.build(article_params)
   article.community = community
   article.save
-  redirect_to user_path(user)
+  redirect_to user_path(current_user)
 end
 
 def destroy

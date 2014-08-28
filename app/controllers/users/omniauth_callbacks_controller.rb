@@ -11,4 +11,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.communities.empty?
+      after_sign_up_path(:add_communities)
+    else
+      super
+    end
+  end
 end

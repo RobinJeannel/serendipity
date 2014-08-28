@@ -5,8 +5,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   protected
-    def after_sign_up_path_for(ressources)
+    def after_sign_up_path_for(resource)
       after_sign_up_path(:add_communities)
     end
+
 
 end
