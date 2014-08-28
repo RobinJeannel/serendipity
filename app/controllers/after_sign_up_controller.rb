@@ -12,7 +12,7 @@ class AfterSignUpController < ApplicationController
   def update
     @user = current_user
 
-    # On veut récupérer les communautés
+    # On récupére les communautés
     params[:communities].each do |community_label|
       community = Community.find_by(name: community_label)
       current_user.memberships.build(community_id: community.id)

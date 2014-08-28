@@ -7,7 +7,7 @@
 <% current_user.communities.each do |community| %>
   <p> <%=community.name%> </p>
   <% if current_user.id == community.user_id %>
-    <%= link_to '+', new_article_path %> <%#ajouter paramas a la route%>
+    <%= link_to 'My post', new_community_article_path(community) %> <%#new_article_path new_community_article_path%>
   <% end %>
 <%end%>
 

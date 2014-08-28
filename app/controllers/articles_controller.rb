@@ -9,16 +9,19 @@ def show
 end
 
 def new
+  @community = Community.find(params[:community_id])
   if current_user.articles.last == nil
-  @article = Article.new
-else
-  @article = current_user.articles.last
-end
+    @article = Article.new
+  else
+    @article = current_user.articles.last
+  end
 end
 
 def create
-  user = current_user
-  article = user.articles.create(article_params)
+  community = Community.find(params[:community_id])
+  article = current_user.articles.build(article_params)
+  article.community = community
+  article.save
   redirect_to user_path(user)
 end
 
