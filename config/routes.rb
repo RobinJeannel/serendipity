@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
 
+  root to: "application#landing"
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :users, controllers: { registrations: 'users/registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
- # devise_for :users, :controllers => {  }
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  #root to: 'home#index '
-  # You can have the root of your site routed with "root"
-  root to: "application#landing"
   resources :articles, except: [:new, :create, :update]
-  resources :users, :only => [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
 
   resources :communities, only: [] do
     resources :articles, only: [:new, :create, :update]
+    resources :memberships, only: [:create]
   end
 
   resources :after_sign_up
+
+  resources :memberships, only: [:index, :destroy]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

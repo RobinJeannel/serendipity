@@ -1,15 +1,31 @@
-<h2>Choose your community </h2>
+<diV class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 text-center">
+      <h2>Choose your community </h2>
 
-<%= form_for @user, url: wizard_path, method: :put do |f| %>
-<%= check_box_tag 'communities[]', 'entrepreneurs', nil, id: "entrepreneurs" %>
-<%= label_tag 'entrepreneurs' %>
+      <%= form_tag wizard_path, method: :put do |f| %>
 
-<%= check_box_tag 'communities[]', 'cookers', nil, id: "cookers" %>
-<%= label_tag 'cookers' %>
+        <div class="checkbox">
+          <% Community.all.each do |community| %>
+            <label>
+              <%= check_box_tag "communities[#{community.id}]", 1 %>
+              <%= community.name %>
+              <%= image_tag community.image_url, width: "50px" %>
+            </label>
+          <% end %>
+        </div>
 
-<%= check_box_tag 'communities[]', 'mountaineers', nil, id: "mountaineers" %>
-<%= label_tag 'mountaineers' %>
+        <hr>
 
-<%= f.submit "Subscibe to those communities" %>
-<% end %>
+        <%= button_tag( :class => "btn btn-default") do %>
+          <i class="icon-user" />Subscribe to those communities
+        <% end %>
+
+      <% end %>
+
+    </div>
+  </div>
+</diV>
+
+
 

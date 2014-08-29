@@ -1,0 +1,21 @@
+<h1>Communities</h1>
+
+
+<div class="subscriptions-container">
+  <%= render "subscriptions" %>
+</div>
+
+
+
+<h2>All</h2>
+
+<table class="all">
+
+  <% @communities.each do |community| %>
+  <tr>
+    <td><%= community.name %></td>
+    <td><%= link_to 'subscribe', community_memberships_path(community), method: :post, remote: true%></td>
+  </tr>
+  <% end %>
+</table>
+
