@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   root to: "application#landing"
-  mount Ckeditor::Engine => '/ckeditor'
+  #mount Ckeditor::Engine => '/ckeditor'
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
