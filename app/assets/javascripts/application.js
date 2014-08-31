@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require medium-editor
+//= require ckeditor/init
+
 
 //= require jquery
 //= require bootstrap-sprockets

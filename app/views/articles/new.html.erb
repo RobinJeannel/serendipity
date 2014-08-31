@@ -5,30 +5,8 @@
   <%= f.text_area :content,:placeholder => @article.content, class: 'editable' %>
   <%= f.submit %>
 <% end %>
+
 <%= link_to 'Post my artcile'%>
 
-<script>
-  $( document ).ready(function() {
-    $('.editable').each(function() {
-      var $this = $(this);
-      var styles = $this.attr('style');
-      if (typeof styles != 'undefined') {
-          styles = ' style="' + styles + '"';
-      }
 
-      $this.wrap('<div class="editable-wrapper"/>');
-      var $w = $(this).parent();
-      $w.prepend('<div class="editable" ' + styles + ' data-placeholder="'+$this.attr('placeholder')+'">' + $this.val()+'</div>');
-      $this.hide();
-      var editor = new MediumEditor('.editable-wrapper');
-      editor.activate();
-      $(editor.elementSelection).focus();
-    });
-    $('form').submit(function(){
-      $('.editable-wrapper').each(function(){
-          $(this).find('textarea').val($(this).find('.editable').html());
-      });
-    });
-  });
-</script>
 
