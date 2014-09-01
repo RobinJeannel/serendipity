@@ -24,7 +24,7 @@
             <%= article.user.name %>
             <h2><%= article.title %></h2>
             <p>
-              <%= excerpt(strip_tags(article.content), "", radius: 60) %>
+              <%= excerpt(strip_tags(article.content_html), "", radius: 60) %>
             </p>
             <%= link_to "Read more", article_path(article) %>
           </div>

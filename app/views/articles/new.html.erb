@@ -3,7 +3,7 @@
   <%= form_for([@community, @article]) do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title,  :placeholder => @article.title %>
-
+    <%= f.label :content %>
     <%= f.text_area :content,:placeholder => @article.content, class: 'js-st-instance' %>
     <%= f.submit %>
   <% end %>
@@ -13,9 +13,14 @@
 
 <script>
   $(function() {
+    SirTrevor.setDefaults({
+      uploadUrl: "/images"
+    });
     new SirTrevor.Editor({ el: $('.js-st-instance') });
   });
 </script>
+
+
 
 
 

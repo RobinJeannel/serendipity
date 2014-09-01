@@ -6,6 +6,11 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
 
+#Sir Trevor Image Uploader (Rails + Carrierwave)
+gem "carrierwave"
+gem "mini_magick", "~> 3.3"
+gem "fog", "~> 1.3.1"
+
 gem 'figaro', '~> 1.0.0.rc1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

@@ -27,6 +27,11 @@ Rails.application.routes.draw do
   post 'article/:article_id/publish', to: 'articles#publish_article', as: :publish_article
 
 
+
+# This enables POST to /images
+resources :images, only: [:create]
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
