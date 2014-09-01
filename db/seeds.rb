@@ -6,9 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-Community.destroy_all
-
 Community.create(name: 'entrepreneurs', image_url: "entrepreneur.png")
 Community.create(name: 'cookers', image_url: "cuisinier.png")
 Community.create(name: 'mountaineers',  image_url: "montagne.png")
+
+AdminUser.create(email: 'admin@admin.admin', password: 'admin')

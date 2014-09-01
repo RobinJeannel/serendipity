@@ -15,15 +15,16 @@ class AfterSignUpController < ApplicationController
     # On récupére les communautés
     communities = params[:communities] || {}
     communities.keys.each do |id|
-      current_user.memberships.build(community_id: id.to_i)
-      if @user.save
-        redirect_to user_path
-      else
-        flash[:notice] = @user.errors.full_messages.join
-        redirect_to :back
-      end
+      id = id.to_i
+      current_user.memberships.build(community_id: id) unless current_user.member_of? id
     end
 
+    if @user.save
+      redirect_to user_path
+    else
+      flash[:notice] = @user.errors.full_messages.join
+      redirect_to :back
+    end
   end
 end
 

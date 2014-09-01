@@ -28,5 +28,14 @@ class User < ActiveRecord::Base
     "#{email}"
   end
 
+  # Community is either an number or a Comunity Object
+  def member_of? community
+    if community.is_a? Numeric
+      self.communities.where(id: community).any?
+    else
+      self.communities.where(id: community.id).any?
+    end
+  end
+
 
 end

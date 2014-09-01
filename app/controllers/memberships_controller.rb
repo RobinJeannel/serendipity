@@ -8,10 +8,15 @@ class MembershipsController < ApplicationController
 
   def create
     community = Community.find(params[:community_id])
-    community.memberships.first_or_create(user: current_user)
+
+    unless current_user.member_of? community
+      current_user.memberships.create(community_id: community.id)
+    end
+
     @memberships = current_user.memberships
+
     respond_to do |format|
-      format.html {redirect_to memberships_path}
+      format.html {redirect_to memberships_path }
       format.js { render "subscription" }
     end
   end

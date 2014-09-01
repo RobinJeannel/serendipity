@@ -1,3 +1,4 @@
+<div class='text-center'>
 <h1>Communities</h1>
 
 
@@ -14,8 +15,11 @@
   <% @communities.each do |community| %>
   <tr>
     <td><%= community.name %></td>
-    <td><%= link_to 'subscribe', community_memberships_path(community), method: :post, remote: true%></td>
+    <td><%= link_to 'subscribe', community_memberships_path(community), method: :post, remote: true %></td>
   </tr>
   <% end %>
 </table>
 
+<%= link_to 'back to my profil', user_path(current_user) %>
+
+</div>
