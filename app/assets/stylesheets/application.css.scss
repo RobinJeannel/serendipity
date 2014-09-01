@@ -27,7 +27,7 @@ html, body{
 
 .wrapper {
   position: absolute;
-  background-image: url('landing.jpg');
+  background-image: url(asset-path('landing.jpg'));
   height: 100%;
   background-size:cover;
 }
