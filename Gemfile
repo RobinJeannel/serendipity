@@ -3,8 +3,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
-gem 'ckeditor'
-gem 'paperclip'
+gem 'sir-trevor-rails'
 gem 'figaro', '~> 1.0.0.rc1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -35,6 +34,9 @@ gem 'spring',        group: :development
 
 gem "better_errors"
 gem "binding_of_caller"
+ruby '2.1.2'
+gem 'thin'
+gem 'rails_12factor'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

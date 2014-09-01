@@ -8,15 +8,5 @@
 
 <%= link_to 'Post my artcile'%>
 
-<%= form_for ([@community, @article]) do |form| %>
-
-  <%= form.cktext_area :title, :placeholder => @article.title, :ckeditor => {:language => 'uk'} %>
-  ...
-  <%= form.cktext_area :content, :value => 'Default value', :id => 'sometext' %>
-  ...
-  <%= cktext_area :page, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
-  ...
-<% end -%>
-
-
-
+f.sir_trevor_text_area :content
+<%= render_sir_trevor(post.content) %>
