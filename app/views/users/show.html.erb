@@ -21,6 +21,7 @@
         <% community.articles.published.each do |article| %>
           <div class="well">
             <%= image_tag article.user.picture %>
+            <%= article.user.name %>
             <h2><%= article.title %></h2>
             <p>
               <%= excerpt(strip_tags(article.content), "", radius: 60) %>

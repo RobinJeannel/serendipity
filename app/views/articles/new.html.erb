@@ -7,8 +7,8 @@
     <%= f.text_area :content,:placeholder => @article.content, class: 'js-st-instance' %>
     <%= f.submit %>
   <% end %>
-  <%= link_to 'Post my article', :class => "btn btn-success" %>
-  <%= link_to 'back to my profil', user_path(current_user) %>
+  <%= link_to 'Post my article', publish_article_path(@article), method: :post %>
+  <%= link_to 'Back to my profil', user_path(current_user) %>
 </div>
 
 <script>
@@ -16,3 +16,6 @@
     new SirTrevor.Editor({ el: $('.js-st-instance') });
   });
 </script>
+
+
+

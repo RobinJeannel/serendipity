@@ -24,6 +24,9 @@ Rails.application.routes.draw do
 
   resources :memberships, only: [:index, :destroy]
 
+  post 'article/:article_id/publish', to: 'articles#publish_article', as: :publish_article
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
