@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 
-
-
-//= require jquery
+//= require underscore
+//= require eventable/eventable
+//= require sir-trevor-js/sir-trevor
 //= require bootstrap-sprockets
+
+//= require_tree .

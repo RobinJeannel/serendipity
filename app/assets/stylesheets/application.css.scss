@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require sir-trevor-js/sir-trevor-icons
+ *= require sir-trevor-js/sir-trevor
  *= require_tree ./application
  *= require_self
 

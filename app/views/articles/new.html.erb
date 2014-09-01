@@ -2,9 +2,14 @@
   <%= f.label :title %>
   <%= f.text_field :title,  :placeholder => @article.title %>
   <%= f.label :content %>
-  <%= f.text_area :content,:placeholder => @article.content, class: 'editable' %>
+  <%= f.text_area :content,:placeholder => @article.content, class: 'js-st-instance' %>
   <%= f.submit %>
 <% end %>
 
 <%= link_to 'Post my artcile'%>
 
+<script>
+  $(function() {
+    new SirTrevor.Editor({ el: $('.js-st-instance') });
+  });
+</script>

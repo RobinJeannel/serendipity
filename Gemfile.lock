@@ -17,6 +17,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.4)
       actionpack (= 4.1.4)
@@ -154,6 +155,15 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
+    rails-assets-Eventable (1.0.4)
+      rails-assets-components--underscore (= 1.4.4)
+    rails-assets-components--underscore (1.4.4)
+    rails-assets-jquery (1.9.1)
+    rails-assets-sir-trevor-js (0.3.2)
+      rails-assets-Eventable (~> 1.0.1)
+      rails-assets-jquery (~> 1.9.1)
+      rails-assets-underscore (~> 1.4.4)
+    rails-assets-underscore (1.4.4)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -233,6 +243,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   rails (= 4.1.4)
+  rails-assets-sir-trevor-js
   rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

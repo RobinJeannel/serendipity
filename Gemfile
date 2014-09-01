@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
+
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-facebook'
@@ -37,6 +39,9 @@ gem "binding_of_caller"
 ruby '2.1.2'
 gem 'thin'
 gem 'rails_12factor'
+
+gem 'rails-assets-sir-trevor-js'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
