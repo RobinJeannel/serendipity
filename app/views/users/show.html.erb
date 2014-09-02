@@ -1,8 +1,12 @@
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-4 profil">
       <h1>Profil</h1>
+      <div class="picture">
       <%= image_tag current_user.picture %>
+      </div>
+      <%= current_user.name%>
       <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
       <%= link_to 'Communities', memberships_path %>
       <p>Communities followed</p>
@@ -10,20 +14,29 @@
       <% current_user.communities.each do |community| %>
         <p> <%=community.name%> <%= image_tag community.image_url, width: "50px" %> </p>
         <% if current_user.id == community.user_id %>
-          <%= link_to 'Edit post', new_community_article_path(community) %>
+          <% article = current_user.article_for community %>
+
+          <% if article %>
+            <%= link_to 'Edit post', edit_community_article_path(community, article) unless article.published? %>
+          <% else %>
+            <%= link_to 'New post', new_community_article_path(community) %>
+          <% end %>
+
+          <%= link_to 'Post my article', publish_article_path(article), method: :post if article %>
         <% end %>
       <%end%>
     </div>
 
-    <div class="col-xs-8">
+    <div class="col-xs-8 backgroundarticle">
       <% @communities.each do |community| %>
 
         <% community.articles.published.each do |article| %>
           <div class="well">
             <%= image_tag article.user.picture %>
-            <%= article.user.name %>
+            <p>By <%= article.user.name %>
+            in <%= community.name %>
             <h2><%= article.title %></h2>
-            <p>
+            </p>
               <%= excerpt(strip_tags(article.content_html), "", radius: 60) %>
             </p>
             <%= link_to "Read more", article_path(article) %>

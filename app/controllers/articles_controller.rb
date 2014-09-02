@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
 
-  def publish_article
-    @article = Article.find(params[:article_id])
+  def publish
+    @article = Article.find(params[:id])
 
     @article.update_attribute(:published, true)
     flash.notice = "Article '#{@article.title}' is about to be post, you can not modify it after !"
 
-    redirect_to user_path(current_user)
+    redirect_to @article
   end
 
   def index
@@ -18,12 +18,8 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
     @community = Community.find(params[:community_id])
-    if current_user.articles.last == nil
-      @article = Article.new
-    else
-      @article = current_user.articles.last
-    end
   end
 
   def create
@@ -42,6 +38,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @community = Community.find(params[:community_id])
   end
 
   def update

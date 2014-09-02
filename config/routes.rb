@@ -12,11 +12,13 @@ Rails.application.routes.draw do
     delete "/users/sign_out" => "devise/sessions#destroy", as: :destroy_user_session
   end
 
-  resources :articles, except: [:new, :create, :update]
+  resources :articles, except: [:new, :create, :update] do
+    post :publish, on: :member
+  end
   resources :users, only: [:index, :show, :edit, :update]
 
   resources :communities, only: [] do
-    resources :articles, only: [:new, :create, :update]
+    resources :articles, only: [:new, :edit, :create, :update]
     resources :memberships, only: [:create]
   end
 
@@ -24,7 +26,6 @@ Rails.application.routes.draw do
 
   resources :memberships, only: [:index, :destroy]
 
-  post 'article/:article_id/publish', to: 'articles#publish_article', as: :publish_article
 
 
 

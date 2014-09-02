@@ -1,4 +1,6 @@
 class SirTrevorImageUploader < CarrierWave::Uploader::Base
+
+  def store_dir
     "uploads/editor".tap do |s|
       s.prepend "test_" if Rails.env.test?
     end

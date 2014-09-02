@@ -24,9 +24,9 @@ class User < ActiveRecord::Base
   has_many :articles
 
 
-  def name
-    "#{email}"
-  end
+  #def name
+   # "#{email}"
+  #end
 
   # Community is either an number or a Comunity Object
   def member_of? community
@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     else
       self.communities.where(id: community.id).any?
     end
+  end
+
+  def article_for community, published = false
+    community.articles.where(user_id: self.id, published: published).last
   end
 
 
