@@ -15,7 +15,7 @@ class Article < ActiveRecord::Base
         html += element["data"]["text"]
 
       elsif element ["type"] == 'image'
-        html += "<img src=#{element["data"]["file"]["url"]}>"
+        html += "<img src=#{element["data"]["file"]["url"]} class='image'>"
 
 
       elsif element ["type"] == "video"

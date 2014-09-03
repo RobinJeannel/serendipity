@@ -20,8 +20,6 @@
   <h2><%= @article.title %></h2>
     <%= @article.content_html %>
     <%= content_tag :div, '', :class => "fb-comments", "data-href" => request.original_url, "data-numposts" => "5", "data-colorscheme" => "light" %>
-
-    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
   </div>
 </div>
 

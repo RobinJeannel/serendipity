@@ -1,10 +1,9 @@
-<div class="background">
 <div class="container">
   <div class="row">
     <div class="col-xs-3 profil">
       <h2 class="text-center">Profil</h2>
       <div class="text-center">
-        <div class="picture">
+        <div class="pic">
       <%= image_tag current_user.picture, :class => "picture"%>
         </div>
       <%= current_user.name%>
@@ -24,32 +23,31 @@
           <% end %>
 
           <%= link_to 'Post my article', publish_article_path(article), method: :post if article %>
-          <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-info" %>
+
         <% end %>
       <%end%>
+      <div class="text-center">
+      <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-info" %>
+      </div>
     </div>
 
-    <div class="col-xs-9">
-      <% @communities.each do |community| %>
-
-        <% community.articles.published.order('created_at desc').each do |article| %>
-          <div class="well white">
-            <%= image_tag article.user.picture, :class => "picture" %>
-            <p>By <%= article.user.name %>
-            in <%= community.name %><%= image_tag community.image_url, width: "50px" %>
-            <h2><%= article.title %></h2>
-            </p>
-              <%= excerpt(strip_tags(article.content_html), "", radius: 60) %>
-            </p>
-            <%= link_to "Read more", article_path(article), class: "btn btn-info" %>
-          </div>
-        <% end %>
+    <div class="col-xs-9 articles">
+      <% @articles.each do |article| %>
+        <div class="well white">
+          <%= image_tag article.user.picture, :class => "picture" %>
+          <p>By <%= article.user.name %>
+          in <%= article.community.name %><%= image_tag article.community.image_url, width: "50px" %>
+          <h2><%= article.title %></h2>
+          </p>
+            <%= excerpt(strip_tags(article.content_html), "", radius: 60) %>
+          </p>
+          <%= link_to "Read more", article_path(article), class: "btn btn-info" %>
+        </div>
       <% end %>
-
     </div>
   </div>
 </div>
-</div>
+
 
 
 
