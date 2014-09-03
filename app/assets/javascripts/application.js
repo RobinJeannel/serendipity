@@ -14,7 +14,7 @@
 //= require jquery_ujs
 
 //= require underscore
-//= require eventable/eventable
+//= require Eventable
 //= require sir-trevor-js/sir-trevor
 //= require bootstrap-sprockets
 
