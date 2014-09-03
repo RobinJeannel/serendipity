@@ -3,12 +3,12 @@
     <div class="col-xs-3 profil">
       <h2 class="text-center">Profil</h2>
       <div class="text-center">
-        <div class="pic">
       <%= image_tag current_user.picture, :class => "picture"%>
-        </div>
       <%= current_user.name%>
-      <%= link_to 'Edit Communities', memberships_path, class: "btn btn-info"%>
+      <div class="verticalspacer"></div>
+      <%= link_to 'Edit Communities', memberships_path, class: "btn btn-default"%>
       </div>
+      <div class="verticalspacer"></div>
       <p>Communities followed :</p>
 
       <% current_user.communities.each do |community| %>
@@ -19,15 +19,16 @@
           <% if article %>
             <%= link_to 'Edit post', edit_community_article_path(community, article) unless article.published? %>
           <% else %>
-            <%= link_to 'New post', new_community_article_path(community) %>
+            <%= link_to 'New post', new_community_article_path(community), class: "btn btn-default" %>
           <% end %>
 
           <%= link_to 'Post my article', publish_article_path(article), method: :post if article %>
 
         <% end %>
+        <div class="verticalspacer"></div>
       <%end%>
       <div class="text-center">
-      <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-info" %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-default" %>
       </div>
     </div>
 
@@ -41,7 +42,7 @@
           </p>
             <%= excerpt(strip_tags(article.content_html), "", radius: 60) %>
           </p>
-          <%= link_to "Read more", article_path(article), class: "btn btn-info" %>
+          <%= link_to "Read more", article_path(article), class: "btn btn-default" %>
         </div>
       <% end %>
     </div>

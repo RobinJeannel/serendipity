@@ -1,30 +1,26 @@
 <div class="text-center">
-<div class="col-xs-2">
-  <%= link_to 'back to my profil', user_path(current_user) %>
-</div>
+  <div class="col-xs-2">
+    <%= link_to 'back to my profil', user_path(current_user), class: "btn btn-default" %>
+  </div>
+
 <div class="col-xs-8">
-  <div class='container'>
-    <div class='row text-center'>
-      <h1>Communities</h1>
-      <div class="subscriptions-container">
-        <%= render "subscriptions" %>
-      </div>
-
-      <h2>All</h2>
-
-      <table class="all">
-
-        <% @communities.each do |community| %>
-        <ul class="list-unstyled">
-          <li><%= community.name %></li>
-          <li><%= link_to 'subscribe', community_memberships_path(community), method: :post, remote: true %></li>
-        </ul>
-        <% end %>
-      </table>
+  <div class='row text-center'>
+    <div class="subscriptions-container">
+      <%= render "subscriptions" %>
     </div>
-
-
-    </div>
+      <h2>You may want to discover</h2>
+        <table class="all">
+          <% @communities.each do |community| %>
+            <ul class="list-unstyled">
+              <li><%= community.name %></li>
+              <li><%= link_to 'subscribe', community_memberships_path(community), method: :post, remote: true, class: "btn btn-default"%></li>
+            </ul>
+          <% end %>
+        </table>
   </div>
+</div>
+
+<div class="col-xs-2">
   </div>
+</div>
 

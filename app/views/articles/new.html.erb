@@ -1,15 +1,22 @@
+<div class="text-center">
+  <div class="col-xs-2">
+    <%= link_to 'back to my profil', user_path(current_user), class: "btn btn-default" %>
+  </div>
+<div class="col-xs-8">
+  <div class = "text-center">
+    <%= form_for([@community, @article]) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title,  :placeholder => @article.title %>
+      <%= f.label :content %>
+      <%= f.text_area :content,:placeholder => @article.content, class: 'js-st-instance' %>
+      <%= f.submit %>
+    <% end %>
+    <%= link_to 'Post my article', publish_article_path(@article), method: :post unless @article.id.nil? %>
 
-
-<div class = "text-center">
-  <%= form_for([@community, @article]) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title,  :placeholder => @article.title %>
-    <%= f.label :content %>
-    <%= f.text_area :content,:placeholder => @article.content, class: 'js-st-instance' %>
-    <%= f.submit %>
-  <% end %>
-  <%= link_to 'Post my article', publish_article_path(@article), method: :post unless @article.id.nil? %>
-  <%= link_to 'Back to my profil', user_path(current_user) %>
+  </div>
+</div>
+<div class="col-xs-2">
+  </div>
 </div>
 
 <script>
