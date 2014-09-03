@@ -14,16 +14,6 @@ class Article < ActiveRecord::Base
       if element["type"] == "text"
         html += element["data"]["text"]
 
-      elsif element["type"] == "heading"
-        html += "<h2>#{element["data"]["text"]}</h2>"
-
-      elsif element["type"] == "quote"
-        html += "<blockquote><p>#{element["data"]["text"]}</p><footer>- <cite>#{element["data"]["cite"]}</cite></blockquote>"
-
-
-      elsif element ["type"] == "list"
-        html += "<ul><li>#{element["data"]["text"]}</li></ul>"
-
       elsif element ["type"] == 'image'
         html += "<img src=#{element["data"]["file"]["url"]}>"
 
