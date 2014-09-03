@@ -9,9 +9,7 @@ class MembershipsController < ApplicationController
   def create
     community = Community.find(params[:community_id])
 
-    unless current_user.member_of? community
-      current_user.memberships.create(community_id: community.id)
-    end
+    current_user.memberships.where(community: community).first_or_create
 
     @memberships = current_user.memberships
 
