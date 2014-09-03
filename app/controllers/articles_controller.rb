@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     @article.update_attribute(:published, true)
+    @article.community.update(user_id: nil)
     flash.notice = "Article '#{@article.title}' is about to be post, you can not modify it after !"
 
     redirect_to @article
