@@ -5,7 +5,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
-
+#gem button sociaux
+gem 'social-share-button'
 #Sir Trevor Image Uploader (Rails + Carrierwave)
 gem "carrierwave"
 gem "mini_magick", "~> 3.3"

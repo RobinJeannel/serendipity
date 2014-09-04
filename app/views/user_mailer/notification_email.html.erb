@@ -1,0 +1,11 @@
+<h1>Hey, <%= @user.name %></h1>
+    <p>
+     New post on <ul><% @user.communities.each do |community| %>
+                      <li><%=community.name%></li>
+                      <%end%>
+                  </ul>
+    </p>
+    <p>
+    To read more go <%= @url%>
+    </p>
+    <p>Hope this will feed your curiosity!</p>

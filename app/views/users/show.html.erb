@@ -35,8 +35,9 @@
     <div class="col-xs-9 articles">
       <% @articles.each do |article| %>
         <div class="well white">
-          <%= image_tag article.user.picture, :class => "picture" %>
-          <p>By <%= article.user.name %>
+          <%= social_share_button_tag(article.title) %>
+           <p><%= image_tag article.user.picture, :class => "picture" %>
+         By <%= article.user.name %>
           in <%= article.community.name %><%= image_tag article.community.image_url, width: "50px" %>
           <h2><%= article.title %></h2>
           </p>
