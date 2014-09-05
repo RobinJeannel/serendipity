@@ -12,8 +12,9 @@ class Article < ActiveRecord::Base
     html = ""
     data.each do |element|
       if element["type"] == "text"
-        html += element["data"]["text"]
-
+        renderer = Redcarpet::Render::HTML.new(render_options = {})
+        markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+        html += markdown.render(element["data"]["text"])
       elsif element ["type"] == 'image'
         html += "<img src=#{element["data"]["file"]["url"]} class='image'>"
 

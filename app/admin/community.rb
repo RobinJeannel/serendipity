@@ -13,14 +13,14 @@ ActiveAdmin.register Community do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  permit_params :user_id, :name
+  permit_params :user_id, :name, :image_url
 
-  form html: {multipart: true} do |f|
-    f.inputs do
-      f.input :user_id, as: :select, collection: User.all, :label_method => :name ,:value_method => :name, :label => "User" ,:include_blank => false
-      f.input :name
+  # form html: {multipart: true} do |f|
+  #   f.inputs do
+  #     # f.input :user_id, as: :select, collection: User.all, :label_method => :name ,:value_method => :name, :label => "User" ,:include_blank => false
+  #     f.input :name
 
-    end
-    f.actions
-  end
+  #   end
+  #   f.actions
+  # end
 end

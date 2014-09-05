@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3 profil">
+    <div class="col-xs-3 profil" data-spy="affix" data-offset-top="" data-offset-bottom="200">
       <h2 class="text-center">Profil</h2>
       <div class="text-center">
-      <%= image_tag current_user.picture, :class => "picture"%>
-      <%= current_user.name%>
+      <%= image_tag @user.picture, :class => "picture"%>
+      <%= @user.name%>
       <div class="verticalspacer"></div>
       <%= link_to 'Edit Communities', memberships_path, class: "btn btn-default"%>
       </div>
       <div class="verticalspacer"></div>
       <p>Communities followed :</p>
 
-      <% current_user.communities.each do |community| %>
+      <% @user.communities.each do |community| %>
         <p> <%=community.name%> <%= image_tag community.image_url, width: "50px" %> </p>
-        <% if current_user.id == community.user_id %>
-          <% article = current_user.article_for community %>
+        <% if @user.id == community.user_id %>
+          <% article = @user.article_for community %>
 
           <% if article %>
             <%= link_to 'Edit post', edit_community_article_path(community, article) unless article.published? %>

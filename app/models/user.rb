@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   #devise :database_authenticatable, :registerable,
          #:recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
+
+  friendly_id :name, use: :slugged
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -41,5 +46,7 @@ class User < ActiveRecord::Base
     community.articles.where(user_id: self.id, published: published).last
   end
 
-
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end
