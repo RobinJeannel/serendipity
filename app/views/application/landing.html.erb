@@ -1,15 +1,51 @@
 
 <div class="wrapper">
   <h1 class="col-sm-12 text-center">Inspire & be inspired !</h1>
+    <h2 class="col-sm-12 text-center">Once a week we randomly pick someone among the community you subscribed and send their thoughts, story, tips to all the others members of the community!
+    </div>
 
-
-  <h2 class="col-sm-12 text-center">Once a week we randomly pick someone among the community you subscribed and send their thoughts, story, tips to all the others members of the community!
-  </div>
-
-  <div class="sign_up_landing text-center col-sm-12">
+    <div class="sign_up_landing text-center col-sm-12">
 
     <%= link_to image_tag(asset_path('facebook.png'), :width => 180), omniauth_authorize_path(:user, :facebook) %>
-  </div>
+</div>
 
+<div class="container">
+      <div class="row text-center">
+        <div class="col-sm-6 col-md-3">
+          <div class="feature">
+            <div class="artcile">
+              <img src="image/worker.png" width="96">
+            </div>
+            <p>
+              Subscribed
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="feature">
+            <img src="image/trust.png" width="96">
+            <p>
+              Discvover
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="feature">
+            <img src="image/delivery.png" width="96">
+            <p>
+              Be picked up
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="feature">
+            <img src="image/idea.png" width="96">
+            <p>
+              Share
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
