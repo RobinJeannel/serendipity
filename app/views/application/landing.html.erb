@@ -1,14 +1,46 @@
 
-<div class="row">
-<div class="intro">
+<div class="container">
 
-  <h1 class="col-sm-12 text-center">Inspire & be inspired !</h1>
-    <h2 class="col-sm-12 text-center">Once a week we randomly pick someone among the community you subscribed and send their thoughts, story, tips to all the others members of the community!
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>Curiosity feeder</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h2>As in real life, we believe the best encounters are due to chance!</h2>
+    </div>
+  </div>
+
+<div class="verticalspacerb"></div>
+
+  <div class="row">
+    <div class="facebook_connect col-sm-12 text-center">
+      <%= link_to image_tag(asset_path('facebook.png'), :width => 180), omniauth_authorize_path(:user, :facebook) %>
+    </div>
+  </div>
+
+<div class="verticalspacerb"></div>
+
+
+  <div class="row text-center">
+
+    <div class="col-lg-4">
+      <p>Once a week we pick someone among the community you subscribed and send their thougths to all the ohthers members of this community</p>
     </div>
 
-    <div class="sign_up_landing text-center col-sm-12">
-    <%= link_to image_tag(asset_path('facebook.png'), :width => 180), omniauth_authorize_path(:user, :facebook) %>
+    <div class="col-lg-4">
+      <p>it could be you</p>
     </div>
+
+    <div class="col-lg-4">
+      <p>mais decouvrebakfbaekbcdbczdkbcizpdklbncpidkslbcnvipsdklncoqisdlkcnzdoizbcklnoqiln</p>
+    </div>
+
+  </div>
 </div>
+
+
 
 
