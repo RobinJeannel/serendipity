@@ -2,16 +2,31 @@
   height: 100%;
   width: 100%;
   font-family: "Droid Serif";
-
 }
 
 
-.container{
+.wrapper {
+
+  height: 650px;
+  background-size: cover;
+  color: white;
+  padding-top: 50px;
+}
+
+.wrapper::after{
+content: "";
+  background: url(asset-path('mac.jpg'));
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: url(asset-path('landing.jpg'));
+  z-index: -1;
 }
+
+
+
 
 .facebook_connect{
   position: absolute;
@@ -22,5 +37,39 @@
 
 .verticalspacerb {
 height: 100px;
+}
+
+.col-sm-12{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#footer {
+  background-color: #222;
+  color: #aaaaaa;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+#footer a {
+  color: #cccccc;
+}
+
+#footer a:hover {
+  color: white;
+}
+
+iframe{
+  width: 100%;
+}
+
+.adresse{
+  background-color: white;
+  border-radius: 15px;
+}
+
+
+.fa{
+  background-color: white;
 }
 
