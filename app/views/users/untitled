@@ -1,19 +1,15 @@
-<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand text-center">Profil</li>
-<div class="verticalspacer"></div>
-<div class="verticalspacer"></div>
-
-            <li class="text-center">
-            <%= image_tag @user.picture, :class => "picture"%>
-            <%= @user.name%></li>
-
-<div class="verticalspacer"></div>
-<div class="verticalspacer"></div>
-
-            <li class="text-center">
-              <p>Communities followed :</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 profil" data-spy="affix" data-offset-top="" data-offset-bottom="200">
+      <h2 class="text-center">Profil</h2>
+      <div class="text-center">
+      <%= image_tag @user.picture, :class => "picture"%>
+      <%= @user.name%>
+      <div class="verticalspacer"></div>
+      <%= link_to 'Edit Communities', memberships_path, class: "btn btn-default"%>
+      </div>
+      <div class="verticalspacer"></div>
+      <p>Communities followed :</p>
 
       <% @user.communities.each do |community| %>
         <p> <%=community.name%> <%= image_tag community.image_url, width: "50px" %> </p>
@@ -31,23 +27,12 @@
         <% end %>
         <div class="verticalspacer"></div>
       <%end%>
-            </li>
-
-            <li class="text-center"> <%= link_to 'Edit Communities', memberships_path, class: "btn btn-default"%></li>
-
-<div class="verticalspacer"></div>
-
-            <li class="text-center">
-            <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-default" %>
-            </li>
-        </ul>
+      <div class="text-center">
+      <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-default" %>
+      </div>
     </div>
 
-    <div id="page-content-wrapper">
-        <div class="page-content">
-            <div class="container">
-                <div class="row">
-                  <div class="col-xs-9 articles">
+    <div class="col-xs-9 articles">
       <% @articles.each do |article| %>
         <div class="well white">
           <%= social_share_button_tag(article.title) %>
@@ -64,8 +49,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
