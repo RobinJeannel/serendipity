@@ -5,9 +5,9 @@
 <div class="col-xs-8">
   <div class = "text-center">
     <%= form_for([@community, @article]) do |f| %>
-      <%= f.label :title %>
+      <br>Here write a nice <%= f.label :title %></br>
       <%= f.text_field :title,  :placeholder => @article.title %>
-      <%= f.label :content %>
+      <br>Here begin to write your best <%= f.label :content %></br>
       <%= f.text_area :content,:placeholder => @article.content, class: 'js-st-instance' %>
       <%= f.submit %>
     <% end %>

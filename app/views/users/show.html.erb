@@ -1,7 +1,7 @@
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand text-center">Profil</li>
+            <li class="sidebar-brand text-center top">Profil</li>
 <div class="verticalspacer"></div>
 <div class="verticalspacer"></div>
 
@@ -16,17 +16,17 @@
               <p>Communities followed :</p>
 
       <% @user.communities.each do |community| %>
-        <p> <%=community.name%> <%= image_tag community.image_url, width: "50px" %> </p>
+        <p> <%=community.name%> <%= image_tag community.image_url, width: "30px" %> </p>
         <% if @user.id == community.user_id %>
           <% article = @user.article_for community %>
 
           <% if article %>
-            <%= link_to 'Edit post', edit_community_article_path(community, article) unless article.published? %>
+            <%= link_to 'Edit post (you have 7 days to finish it)', edit_community_article_path(community, article) unless article.published? %>
           <% else %>
-            <%= link_to 'New post', new_community_article_path(community), class: "btn btn-default" %>
+            <%= link_to 'New post,start writting your best', new_community_article_path(community), class: "btn btn-default" %>
           <% end %>
 
-          <%= link_to 'Post my article', publish_article_path(article), method: :post if article %>
+          <%= link_to 'Post my article (you can not modified it after)', publish_article_path(article), method: :post if article %>
 
         <% end %>
         <div class="verticalspacer"></div>
@@ -47,13 +47,13 @@
         <div class="page-content">
             <div class="container">
                 <div class="row">
-                  <div class="col-xs-9 articles">
+                  <div class="col-xs-9 articles top">
       <% @articles.each do |article| %>
         <div class="well white">
           <%= social_share_button_tag(article.title) %>
            <p><%= image_tag article.user.picture, :class => "picture" %>
          By <%= article.user.name %>
-          in <%= article.community.name %><%= image_tag article.community.image_url, width: "50px" %>
+          in <%= article.community.name %><%= image_tag article.community.image_url, width: "30px" %>
           <h2><%= article.title %></h2>
           </p>
             <%= excerpt(strip_tags(article.content_html), "", radius: 60) %>
