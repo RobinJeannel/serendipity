@@ -1,7 +1,7 @@
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand text-center top">Profil</li>
+            <li class="sidebar-brand text-center top"></li>
 <div class="verticalspacer"></div>
 <div class="verticalspacer"></div>
 
@@ -23,7 +23,7 @@
           <% if article %>
             <%= link_to 'Edit post (you have 7 days to finish it)', edit_community_article_path(community, article) unless article.published? %>
           <% else %>
-            <%= link_to 'New post,start writting your best', new_community_article_path(community), class: "btn btn-default" %>
+            <%= link_to 'New post', new_community_article_path(community), class: "btn btn-default" %>
           <% end %>
 
           <%= link_to 'Post my article (you can not modified it after)', publish_article_path(article), method: :post if article %>

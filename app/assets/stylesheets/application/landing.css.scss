@@ -9,13 +9,13 @@
 
   height: 650px;
   background-size: cover;
-  color: white;
+  color: black;
   padding-top: 50px;
 }
 
 .wrapper::after{
 content: "";
-  background: url(asset-path('mac.jpg'));
+background: url(asset-path('mac.jpg'));
 
   top: 0;
   left: 0;
@@ -23,11 +23,12 @@ content: "";
   right: 0;
   position: absolute;
   z-index: -1;
+  opacity: 0.8;
 }
 
 
 .fond{
-  background: rgb(80, 182, 183);
+  background: rgb(99, 148, 195);
 }
 
 .facebook_connect{
