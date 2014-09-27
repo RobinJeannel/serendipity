@@ -45,12 +45,12 @@ FriendlyId.defaults do |config|
   # Most applications will use the :slugged module everywhere. If you wish
   # to do so, uncomment the following line.
   #
-  config.use :slugged #MODIFIED BY ROBIN
+  #config.use :slugged #MODIFIED BY ROBIN
   #
   # By default, FriendlyId's :slugged addon expects the slug column to be named
   # 'slug', but you can change it if you wish.
   #
-   config.slug_column = 'slug' #MODIFIED BY ROBIN
+   #config.slug_column = 'slug' #MODIFIED BY ROBIN
   #
   # When FriendlyId can not generate a unique ID from your base method, it appends
   # a UUID, separated by a single dash. You can configure the character used as the
